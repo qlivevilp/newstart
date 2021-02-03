@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Map;
+
 /**
  * @author: create by shujuan.tang
  * @description: com.tang.controller
@@ -21,7 +23,8 @@ public class HelloController {
 
 
     @RequestMapping("/thyme")
-    public String success() {
+    public String success(Map<String,Object> map) {
+        map.put("thyme","thyme say hello world");
         System.out.println("thyme hello");
         return "success";
     }
